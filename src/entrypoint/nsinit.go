@@ -47,7 +47,7 @@ func main() {
 	fmt.Println()
 
 	fmt.Println("Merging files...")
-	if pts, err := mounts("/mnt", "/usr"); err == nil {
+	if pts, err := mounts("/AMP/serverfiles"); err == nil {
 		fmt.Println()
 		fmt.Println("    Bind mounts:")
 		var unsupported bool
@@ -64,11 +64,11 @@ func main() {
 	}
 	nso, err := MergeOverlay(
 		"/tmp",
-		"/mnt/titanfall",
-		"/usr/lib/northstar",
-		"/mnt/mods",
-		"/mnt/navs",
-		"/mnt/plugins",
+		"/AMP/serverfiles/titanfall",
+		"/AMP/serverfiles/northstar",
+		"/AMP/serverfiles/mods",
+		"/AMP/serverfiles/navs",
+		"/AMP/serverfiles/plugins",
 	)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: Failed to merge game files: %v.\n", err)
