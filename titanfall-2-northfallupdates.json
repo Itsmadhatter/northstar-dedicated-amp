@@ -1,1 +1,10 @@
-[]
+[
+  {
+    "UpdateStageName": "Setup Wine & Northstar",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "/data/setup.sh",
+    "OneShot": false
+  }
+]

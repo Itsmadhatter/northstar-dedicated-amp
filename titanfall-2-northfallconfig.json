@@ -1,1 +1,28 @@
-[]
+[
+  {
+    "DisplayName": "Server Name",
+    "Category": "Server Settings",
+    "Description": "Sets the name of the server.",
+    "Keywords": "server,name",
+    "FieldName": "$ServerName",
+    "InputType": "text",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "AMP Hosted Northfall Server",
+    "EnumValues": {},
+    "Required": true
+  },
+  {
+    "DisplayName": "Server Description",
+    "Category": "Server Settings",
+    "Description": "Sets the description of the server.",
+    "Keywords": "server,description",
+    "FieldName": "$ServerDescription",
+    "InputType": "text",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "Welcome to my Northfall Server!",
+    "EnumValues": {},
+    "Required": true
+  }
+]
