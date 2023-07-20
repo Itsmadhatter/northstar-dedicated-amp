@@ -1,7 +1,5 @@
 #!/bin/bash
 
-echo "Setup Wine"
-
 /usr/bin/nswrap-wineprefix && \
   for x in \
       $WINEPREFIX/drive_c/"Program Files"/"Common Files"/System/*/* \

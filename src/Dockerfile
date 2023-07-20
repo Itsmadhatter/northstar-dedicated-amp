@@ -34,6 +34,7 @@ RUN --mount=from=build-entrypoint,source=/nsbuild/src/entrypoint,target=/nsbuild
 
 RUN mkdir /data
 COPY ./setup/ /data
+RUN chmod +x /data/*.sh
 
 RUN apt-get clean && rm -rf /var/lib/apt/lists/* && rm -rf /nsbuild
 

@@ -5,8 +5,6 @@ NORTHSTAR_DOWNLOAD_URL="https://github.com/R2Northstar/Northstar/releases/downlo
 CONFIG_FILE="R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg"
 STARTUP_CONFIG_FILE="ns_startup_args_dedi.txt"
 
-echo "Installing Northstar"
-
 mkdir -p /AMP/serverfiles/titanfall /AMP/serverfiles/northstar /AMP/serverfiles/mods /AMP/serverfiles/plugins /AMP/serverfiles/navs
 
 cd /AMP/serverfiles/northstar
