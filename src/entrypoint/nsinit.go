@@ -64,11 +64,11 @@ func main() {
 	}
 	nso, err := MergeOverlay(
 		"/tmp",
-		"/AMP/serverfiles/titanfall",
-		"/AMP/serverfiles/northstar",
-		"/AMP/serverfiles/mods",
-		"/AMP/serverfiles/navs",
-		"/AMP/serverfiles/plugins",
+		"/AMP/tf2northstar/serverfiles/titanfall",
+		"/AMP/tf2northstar/serverfiles/northstar",
+		"/AMP/tf2northstar/serverfiles/mods",
+		"/AMP/tf2northstar/serverfiles/navs",
+		"/AMP/tf2northstar/serverfiles/plugins",
 	)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error: Failed to merge game files: %v.\n", err)

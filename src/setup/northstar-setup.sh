@@ -5,9 +5,9 @@ NORTHSTAR_DOWNLOAD_URL="https://github.com/R2Northstar/Northstar/releases/downlo
 CONFIG_FILE="R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg"
 STARTUP_CONFIG_FILE="ns_startup_args_dedi.txt"
 
-mkdir -p /AMP/serverfiles/titanfall /AMP/serverfiles/northstar /AMP/serverfiles/mods /AMP/serverfiles/plugins /AMP/serverfiles/navs
+mkdir -p /AMP/tf2northstar/serverfiles/titanfall /AMP/tf2northstar/serverfiles/northstar /AMP/tf2northstar/serverfiles/mods /AMP/tf2northstar/serverfiles/plugins /AMP/tf2northstar/serverfiles/navs
 
-cd /AMP/serverfiles/northstar
+cd /AMP/tf2northstar/serverfiles/northstar
 
 if [ -f "$CONFIG_FILE" ]; then
     cp $CONFIG_FILE $CONFIG_FILE.bak
