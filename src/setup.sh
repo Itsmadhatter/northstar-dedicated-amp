@@ -8,7 +8,7 @@ mkdir -p /AMP/serverfiles/titanfall /AMP/serverfiles/northstar /AMP/serverfiles/
 
 cd /AMP/serverfiles/northstar
 
-curl "$NORTHSTAR_DOWNLOAD_URL" --output northstar.zip
+curl -L "$NORTHSTAR_DOWNLOAD_URL" --output northstar.zip
 unzip -o northstar.zip
 rm northstar.zip
 
