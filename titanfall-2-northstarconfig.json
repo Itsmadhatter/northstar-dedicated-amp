@@ -5,6 +5,7 @@
     "Description": "Sets the name of the server.",
     "Keywords": "server,name",
     "FieldName": "$ServerName",
+    "ParamFieldName": "ns_server_name",
     "InputType": "text",
     "IsFlagArgument": false,
     "IncludeInCommandLine": false,
@@ -18,11 +19,90 @@
     "Description": "Sets the description of the server.",
     "Keywords": "server,description",
     "FieldName": "$ServerDescription",
+    "ParamFieldName": "ns_server_desc",
     "InputType": "text",
     "IsFlagArgument": false,
     "IncludeInCommandLine": false,
     "DefaultValue": "Welcome to my Northstar Server!",
     "EnumValues": {},
     "Required": true
+  },
+  {
+    "DisplayName": "Server Password",
+    "Category": "Server Settings",
+    "Description": "Sets the Password of the server.",
+    "Keywords": "password",
+    "FieldName": "password",
+    "ParamFieldName": "ns_server_password",
+    "InputType": "password",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "",
+    "EnumValues": {},
+    "Required": false
+  },
+  {
+    "DisplayName": "Report Server to Masterserver",
+    "Category": "Server Settings",
+    "Description": "Whether this server should report itself to the masterserver.",
+    "Keywords": "report,masterservers",
+    "FieldName": "report_to_masterservers",
+    "ParamFieldName": "ns_report_server_to_masterserver",
+    "InputType": "checkbox",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+		  "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Report Server to Masterserver on SP Map",
+    "Category": "Server Settings",
+    "Description": "Whether this server should report itself to the masterserver if started on a singleplayer map.",
+    "Keywords": "report,masterservers,sp",
+    "FieldName": "report_to_masterservers_sp",
+    "ParamFieldName": "ns_report_sp_server_to_masterserver",
+    "InputType": "checkbox",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "0",
+    "EnumValues": {
+      "False": "0",
+		  "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Unlock everything",
+    "Category": "Game Settings",
+    "Description": "Whether all items, weapons, etc should be unlocked on the server.",
+    "Keywords": "game,unlockall",
+    "FieldName": "unlock_everything",
+    "ParamFieldName": "everything_unlocked",
+    "InputType": "checkbox",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+		  "True": "1"
+    }
+  },
+  {
+    "DisplayName": "Return to Lobby",
+    "Category": "Game Settings",
+    "Description": "Whether the server should return to private match lobby after completing a game, if off, this will go to the next map/mode in the playlist.",
+    "Keywords": "game,lobby,return",
+    "FieldName": "return_to_lobby",
+    "ParamFieldName": "ns_should_return_to_lobby",
+    "InputType": "checkbox",
+    "IsFlagArgument": false,
+    "IncludeInCommandLine": false,
+    "DefaultValue": "1",
+    "EnumValues": {
+      "False": "0",
+		  "True": "1"
+    }
   }
 ]

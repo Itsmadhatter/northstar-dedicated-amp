@@ -4,8 +4,8 @@
     "UpdateSourcePlatform": "Linux",
     "UpdateSource": "Executable",
     "UpdateSourceData": "/bin/bash",
-    "UpdateSourceArgs": "/data/wine-setup.sh",
-    "OneShot": true
+    "UpdateSourceArgs": "-c 'WINEPREFIX=\"{{$FullRootDir}}.wine\" /data/wine-setup.sh'",
+    "OneShot": false
   },
   {
     "UpdateStageName": "Install Northstar",

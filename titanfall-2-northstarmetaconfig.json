@@ -5,5 +5,26 @@
     "ConfigType": "kvp",
     "ConfigFormat": "{0} \"{1}\"",
     "ConfigFormatRegex": "^(?<key>.+?) \"?(?<value>.*?)\"?$"
+  },
+  {
+    "ConfigFile": "northstar/R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg",
+    "AutoMap": true,
+    "ConfigType": "kvp",
+    "ConfigFormat": "{0} {1}",
+    "ConfigFormatRegex": "^(?<key>.+?) (?<value>.*?)$"
+  },
+  {
+    "ConfigFile": "northstar/ns_startup_args_dedi.txt",
+    "AutoMap": true,
+    "ConfigType": "kvp",
+    "ConfigFormat": "+{0} {1}",
+    "ConfigFormatRegex": "^+(?<key>.+?) (?<value>.*?)$"
+  },
+  {
+    "ConfigFile": "northstar/ns_startup_args_dedi.txt",
+    "AutoMap": true,
+    "ConfigType": "kvp",
+    "ConfigFormat": "-{0} {1}",
+    "ConfigFormatRegex": "^-(?<key>.+?) (?<value>.*?)$"
   }
 ]

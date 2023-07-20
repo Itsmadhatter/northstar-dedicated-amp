@@ -1,0 +1,5 @@
++mp_gamemode tdm
++setplaylist tdm
++map mp_angel_city
+
+-port 37015
