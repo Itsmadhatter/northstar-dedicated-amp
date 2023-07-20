@@ -84,5 +84,5 @@ Meta.MinAMPVersion=2.4.5.4
 Meta.NoCommercialUsage=False
 Meta.OS=2
 Meta.Prerequsites=[]
-Meta.SpecificDockerImage=c240b54853c4c2c18ef2cf1d79fbccc62919333a5dc3523bb99280938876b1d3
+Meta.SpecificDockerImage=7d5aef5e2d52e6939fd40ff96c82da8ca0137898818995b348fe30565585e8ff
 Meta.URL=
