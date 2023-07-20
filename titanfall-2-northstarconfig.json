@@ -8,7 +8,7 @@
     "InputType": "text",
     "IsFlagArgument": false,
     "IncludeInCommandLine": false,
-    "DefaultValue": "AMP Hosted Northfall Server",
+    "DefaultValue": "AMP Hosted Northstar Server",
     "EnumValues": {},
     "Required": true
   },
@@ -21,7 +21,7 @@
     "InputType": "text",
     "IsFlagArgument": false,
     "IncludeInCommandLine": false,
-    "DefaultValue": "Welcome to my Northfall Server!",
+    "DefaultValue": "Welcome to my Northstar Server!",
     "EnumValues": {},
     "Required": true
   }

@@ -1,0 +1,18 @@
+[
+  {
+    "UpdateStageName": "Setup Wine",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "/data/wine-setup.sh",
+    "OneShot": true
+  },
+  {
+    "UpdateStageName": "Install Northstar",
+    "UpdateSourcePlatform": "Linux",
+    "UpdateSource": "Executable",
+    "UpdateSourceData": "/bin/bash",
+    "UpdateSourceArgs": "/data/northstar-setup.sh",
+    "OneShot": false
+  }
+]

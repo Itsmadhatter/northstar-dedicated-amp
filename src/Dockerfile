@@ -14,10 +14,6 @@ FROM build AS build-wine
 COPY --chown=nsbuild:nsbuild ./wine/ /nsbuild/src/wine/
 RUN ulimit -n 1024; cd /nsbuild/src/wine && bash build.sh
 
-#FROM build AS build-northstar
-#COPY --chown=nsbuild:nsbuild ./northstar/ /nsbuild/src/northstar/
-#RUN ulimit -n 1024; cd /nsbuild/src/northstar && bash build.sh
-
 FROM build AS build-nswrap
 COPY --chown=nsbuild:nsbuild ./nswrap/ /nsbuild/src/nswrap/
 RUN ulimit -n 1024; cd /nsbuild/src/nswrap && bash build.sh
@@ -31,23 +27,18 @@ RUN apt-get update && apt-get install -y gnutls-bin tzdata ca-certificates sudo 
 
 RUN --mount=from=build-wine,source=/nsbuild/src/wine,target=/nsbuild/wine \
     cd /nsbuild/wine && bash install.sh
-#RUN --mount=from=build-northstar,source=/nsbuild/src/northstar,target=/nsbuild/northstar \
-#    cd /nsbuild/northstar && bash install.sh
 RUN --mount=from=build-nswrap,source=/nsbuild/src/nswrap,target=/nsbuild/nswrap \
     cd /nsbuild/nswrap && bash install.sh
 RUN --mount=from=build-entrypoint,source=/nsbuild/src/entrypoint,target=/nsbuild/entrypoint \
     cd /nsbuild/entrypoint && bash install.sh
 
 RUN mkdir /data
-COPY ./setup.sh /data
+COPY ./setup/ /data
 
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+RUN apt-get clean && rm -rf /var/lib/apt/lists/* && rm -rf /nsbuild
 
 # silence Xvfb xkbcomp warnings by working around the bug (present in libX11 1.7.2) fixed in libX11 1.8 by https://gitlab.freedesktop.org/xorg/lib/libx11/-/merge_requests/79
 RUN echo 'partial xkb_symbols "evdev" {};' > /usr/share/X11/xkb/symbols/inet
-
-#RUN adduser --gecos '' --disabled-password northstar && \
-    #echo 'northstar ALL=(ALL) NOPASSWD: ALL' > /etc/sudoers.d/northstar && \
 
 EXPOSE 37015/udp
 ENTRYPOINT ["/ampstart.sh"]

@@ -4,6 +4,6 @@
         "Port": "37015",
         "Name": "Main Game Port",
         "Description": "Port used for main game traffic",
-        "Ref": "MainGamePort"
+        "Ref": "GamePort"
     }
 ]

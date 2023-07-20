@@ -1,16 +1,4 @@
 #!/bin/bash
-# AMP setup script
-
-NORTHSTAR_VERSION=1.16.3
-NORTHSTAR_DOWNLOAD_URL="https://github.com/R2Northstar/Northstar/releases/download/v${NORTHSTAR_VERSION}/Northstar.release.v${NORTHSTAR_VERSION}.zip"
-
-mkdir -p /AMP/serverfiles/titanfall /AMP/serverfiles/northstar /AMP/serverfiles/mods /AMP/serverfiles/plugins /AMP/serverfiles/navs
-
-cd /AMP/serverfiles/northstar
-
-curl -L "$NORTHSTAR_DOWNLOAD_URL" --output northstar.zip
-unzip -o northstar.zip
-rm northstar.zip
 
 export WINEPREFIX="/home/amp/.wine"
 /usr/bin/nswrap-wineprefix && \
