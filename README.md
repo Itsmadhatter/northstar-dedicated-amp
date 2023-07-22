@@ -1,20 +1,15 @@
-<h1 align="center">northstar-dedicated</h1>
+<h1 align="center">Northstar Dedicated AMP Module</h1>
 
-**Docker image for the [Northstar](https://northstar.tf) dedicated server.** <a href="https://github.com/pg9182/northstar-dedicated/actions/workflows/ci.yml"><img src="https://github.com/pg9182/northstar-dedicated/actions/workflows/ci.yml/badge.svg?branch=master&event=push" align="right"/></a>
-
-[`ghcr.io/pg9182/northstar-dedicated:1-tf2.0.11.0`](https://ghcr.io/pg9182/northstar-dedicated)
+**[AMP](https://cubecoders.com/) Module and Docker image for the [Northstar](https://northstar.tf) dedicated server.**
 
 ## Features
 
 - **Much more efficient** than the running the server on Windows in general, especially around RAM usage.
 - **Shares read-only game files** between multiple instances.
-- **Environment variable configuration** support for convars and arguments.
 - **Stable versioning scheme** with compatibility guarantees, smoothing over changes in Northstar itself and making automatic container updates safer.
 - **Layered docker image** for faster builds, smaller downloads, and a much lower disk footprint.
 - **Includes custom d3d11 and gfsdk stubs**, reducing the memory usage (by ~700 MB), and eliminating the need for a physical or emulated GPU (these are now part of the [R2Northstar](https://github.com/R2Northstar/NorthstarStubs) organization).
 - **Includes a custom wine build** to reduce the size of the container (it will get even smaller soon).
-- **Minimal Docker container** based on Alpine Linux.
-- **Updates the process name to include the server status** (similar to the process title when running on Windows).
 - **Automatically stops the container if Northstar crashes**, allowing it to be automatically restarted by a container orchestrator.
 - **Graceful server shutdown** when stopping the container.
 
@@ -26,23 +21,6 @@
     docker run --rm --interactive --pull always --publish 8081:8081/tcp --publish 37015:37015/udp --mount "type=bind,source=/path/to/titanfall2,target=/mnt/titanfall,readonly" --env NS_SERVER_NAME="[YOUR-REGION] Your server name" ghcr.io/pg9182/northstar-dedicated:1-tf2.0.11.0
     ```
 
-## Versioning
-
-### Stable
-
-These tags will be used for stable versions from the master branch. The major version will be incremented when a breaking change is made.
-
-- `{major-version}.{YYMMDD}.git{short-hash}-tf{titanfall-ver}-ns{northstar-ver}` (unique tag)
-- `{major-version}-tf{titanfall-ver}-ns{northstar-ver}` (recommended if you're using custom config)
-- `{major-version}-tf{titanfall-ver}` (recommended if you're only using the documented env vars)
-
-**Note:** There isn't a `latest` tag since the Titanfall 2 version may need to be updated manually.
-
-### Development
-
-These tags will be used for the dev branch and for all CI builds.
-
-- `dev.{YYMMDD}.git{short-hash}` (unique tag)
 
 ## Titanfall 2
 
@@ -525,11 +503,3 @@ services:
       - '37015:37015/udp'
     restart: always
 ```
-
-#### kubernetes
-
-TODO
-
-#### Nomad
-
-TODO
