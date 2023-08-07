@@ -23,7 +23,7 @@ COPY --chown=nsbuild:nsbuild ./entrypoint/ /nsbuild/src/entrypoint/
 RUN ulimit -n 1024; cd /nsbuild/src/entrypoint && bash build.sh
 
 FROM base
-RUN apt-get update && apt-get install -y gnutls-bin tzdata ca-certificates sudo curl tar unzip
+RUN apt-get update && apt-get install -y gnutls-bin tzdata ca-certificates sudo curl tar unzip wget
 
 RUN --mount=from=build-wine,source=/nsbuild/src/wine,target=/nsbuild/wine \
     cd /nsbuild/wine && bash install.sh
