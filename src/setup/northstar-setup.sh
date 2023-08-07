@@ -1,7 +1,6 @@
 #!/bin/bash
 
-NORTHSTAR_VERSION=1.16.3
-NORTHSTAR_DOWNLOAD_URL="https://github.com/R2Northstar/Northstar/releases/download/v${NORTHSTAR_VERSION}/Northstar.release.v${NORTHSTAR_VERSION}.zip"
+NORTHSTAR_RELEASE_URL="https://api.github.com/repos/R2Northstar/Northstar/releases/latest"
 CONFIG_FILE="R2Northstar/mods/Northstar.CustomServers/mod/cfg/autoexec_ns_server.cfg"
 STARTUP_CONFIG_FILE="ns_startup_args_dedi.txt"
 
@@ -17,7 +16,12 @@ if [ ! -f "$STARTUP_CONFIG_FILE" ]; then
     cp /data/$STARTUP_CONFIG_FILE $STARTUP_CONFIG_FILE
 fi
 
-curl -L "$NORTHSTAR_DOWNLOAD_URL" --output northstar.zip
+curl -s $NORTHSTAR_RELEASE_URL \
+| grep "browser_download_url" \
+| cut -d : -f 2,3 \
+| tr -d \" \
+| wget -O northstar.zip -qi -
+
 unzip -o northstar.zip
 rm northstar.zip
 
